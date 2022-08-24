@@ -65,11 +65,16 @@
         // No need to change anything ABOVE this line ^
 
         return (
+          // This bug fix required: 
+          // 1) opening and closing brackets for JSX fragments on lines 69 and 86
+          // 2) the argument drawCard was needed in the curly brackets on line 71
+          // 3) the third "c" in the variable onClick on line 77 needed to be capitalized
+          <>
           <h1>Draw a Card</h1>
-          <button onClick={}>
+          <button onClick={drawCard}>
             Click to Draw a Card
           </button>
-          <button onclick={shuffle}>
+          <button onClick={shuffle}>
             Return Cards and Shuffle Deck
           </button>
           <div style={handStyles}>
@@ -81,6 +86,7 @@
               )
             })}
           </div>
+          </>
         )
       }
 
